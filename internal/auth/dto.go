@@ -2,7 +2,7 @@ package auth
 
 type Login struct {
 	Email    string `json:"email" validate:"required,email"`
-	Password string `json:"password" validate:"required,alphanum,min=8"`
+	Password string `json:"password" validate:"required,min=8"`
 }
 
 type Register struct {

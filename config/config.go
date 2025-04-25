@@ -20,6 +20,10 @@ type AppConfig struct {
 	JWT struct {
 		Secret string
 	}
+	Google struct {
+		ClientID     string
+		ClientSecret string
+	}
 }
 
 func NewConfig() AppConfig {
@@ -48,6 +52,13 @@ func NewConfig() AppConfig {
 			Secret string
 		}{
 			Secret: os.Getenv("JWT_SECRET"),
+		},
+		Google: struct {
+			ClientID     string
+			ClientSecret string
+		}{
+			ClientID:     os.Getenv("GOOGLE_CLIENT_ID"),
+			ClientSecret: os.Getenv("GOOGLE_CLIENT_SECRET"),
 		},
 	}
 }
